@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Colorful Docker App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Python Flask + Docker</p>
+          <h1>Hello from a colorful containerized Flask app.</h1>
+          <p class="summary">
+            This mini project shows a recruiter that you can build a Python web app,
+            package it into a Docker image, run it consistently, and document it clearly.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="/health">Check Health</a>
+            <a class="button secondary" href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer">Learn Flask</a>
+          </div>
+        </div>
+
+        <div class="status-panel" aria-label="Project status">
+          <div class="status-dot"></div>
+          <p class="status-label">Container-ready</p>
+          <p class="status-value">Port 5000</p>
+        </div>
+      </section>
+
+      <section class="skills-section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills Demonstrated</h2>
+        <div class="skills-grid">
+          {% for skill in skills %}
+            <article class="skill-card">
+              <span>{{ loop.index }}</span>
+              <strong>{{ skill }}</strong>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
